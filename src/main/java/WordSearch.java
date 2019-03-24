@@ -8,9 +8,11 @@ import java.util.List;
 class WordSearch {
 
     private String filePath;
+    private String[][] stringArray;
 
-    WordSearch(String filePath) {
+    WordSearch(String filePath) throws IOException {
         this.filePath = filePath;
+        this.stringArray = parseLinesIntoStringArray();
     }
 
     List<String> getLinesFromFile() throws IOException {
@@ -41,8 +43,12 @@ class WordSearch {
 
     List<GridItem> parseStringArrayIntoGridItems() {
         List<GridItem> gridItems = new ArrayList<>();
-        gridItems.add(new GridItem("U"));
-        gridItems.add(new GridItem("B"));
+        for (int x = 0; x < stringArray.length; x++) {
+            for (int y = 0; y < stringArray[0].length; y++) {
+                GridItem gridItem = new GridItem(stringArray[y][x], x, y);
+                gridItems.add(gridItem);
+            }
+        }
         return gridItems;
     }
 }

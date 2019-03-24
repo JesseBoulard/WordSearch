@@ -12,7 +12,7 @@ public class WordSearchTest {
     private WordSearch pythonsWordSearch;
 
     @Before
-    public void setUp() {
+    public void setUp() throws IOException {
         starTrekWordSearch = new WordSearch("star-trek-search.txt");
         pythonsWordSearch = new WordSearch("pythons-search.txt");
     }
@@ -74,13 +74,27 @@ public class WordSearchTest {
     }
 
     @Test
-    public void parseCharacterArrayIntoGridItemsTest() {
+    public void parseStringArrayIntoGridItemsTest() {
         List<GridItem> gridItems = starTrekWordSearch.parseStringArrayIntoGridItems();
 
         String expectedFirstString = "U";
         String actualFirstString = gridItems.get(0).getLetter();
 
         String expectedLastString = "B";
+        String actualLastString = gridItems.get(gridItems.size() - 1).getLetter();
+
+        assertEquals(expectedFirstString, actualFirstString);
+        assertEquals(expectedLastString, actualLastString);
+    }
+
+    @Test
+    public void parseStringArrayIntoGridItemsDifferentFileTest() {
+        List<GridItem> gridItems = pythonsWordSearch.parseStringArrayIntoGridItems();
+
+        String expectedFirstString = "V";
+        String actualFirstString = gridItems.get(0).getLetter();
+
+        String expectedLastString = "G";
         String actualLastString = gridItems.get(gridItems.size() - 1).getLetter();
 
         assertEquals(expectedFirstString, actualFirstString);
