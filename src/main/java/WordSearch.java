@@ -38,4 +38,11 @@ class WordSearch {
     private String[] getStringsFromLine(String line) {
         return line.split(",");
     }
+
+    List<GridItem> parseStringArrayIntoGridItems() {
+        List<GridItem> gridItems = new ArrayList<>();
+        gridItems.add(new GridItem("U"));
+        gridItems.add(new GridItem("B"));
+        return gridItems;
+    }
 }

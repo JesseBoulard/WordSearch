@@ -72,4 +72,18 @@ public class WordSearchTest {
         assertEquals(expectedFirstString, actualFirstString);
         assertEquals(expectedLastString, actualLastString);
     }
+
+    @Test
+    public void parseCharacterArrayIntoGridItemsTest() {
+        List<GridItem> gridItems = starTrekWordSearch.parseStringArrayIntoGridItems();
+
+        String expectedFirstString = "U";
+        String actualFirstString = gridItems.get(0).getLetter();
+
+        String expectedLastString = "B";
+        String actualLastString = gridItems.get(gridItems.size() - 1).getLetter();
+
+        assertEquals(expectedFirstString, actualFirstString);
+        assertEquals(expectedLastString, actualLastString);
+    }
 }
