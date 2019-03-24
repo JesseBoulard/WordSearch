@@ -100,4 +100,12 @@ public class WordSearchTest {
         assertEquals(expectedFirstString, actualFirstString);
         assertEquals(expectedLastString, actualLastString);
     }
+
+    @Test
+    public void getGridItemForCoordinatesTest() {
+        String expected = "B";
+        String actual = starTrekWordSearch.getGridItemForCoordinates(14, 14).getLetter();
+
+        assertEquals(expected, actual);
+    }
 }

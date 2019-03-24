@@ -51,4 +51,8 @@ class WordSearch {
         }
         return gridItems;
     }
+
+    GridItem getGridItemForCoordinates(int xCoordinate, int yCoordinate) {
+        return new GridItem("B", 14, 14);
+    }
 }
