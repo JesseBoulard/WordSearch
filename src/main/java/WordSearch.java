@@ -1,12 +1,25 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 class WordSearch {
 
-    List<String> getLinesFromFile() {
+    private String filePath;
+
+    WordSearch(String filePath) {
+        this.filePath = filePath;
+    }
+
+    List<String> getLinesFromFile() throws IOException {
         List<String> fileLines = new ArrayList<>();
-        fileLines.add("BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA");
-        fileLines.add("K,Y,L,B,Q,Q,P,M,D,F,C,K,E,A,B");
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(filePath)));
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+            fileLines.add(line);
+        }
         return fileLines;
     }
 }

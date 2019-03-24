@@ -1,0 +1,17 @@
+CLEESE,PALIN,IDLE,JONES,GILLIAM
+V,G,C,P,P,R,Q,K,M,Z,I,U,K,J,T,W
+X,A,P,A,A,Q,T,Z,L,W,P,C,Q,B,C,D
+T,L,L,Q,S,E,L,X,G,O,F,S,O,Y,C,R
+C,I,L,E,Z,A,F,N,Z,C,W,C,T,A,W,Y
+N,D,W,B,V,I,J,T,Q,Q,L,N,F,P,P,U
+C,G,K,Y,H,L,W,N,R,Y,M,E,Q,W,F,J
+S,I,W,A,W,G,G,Y,D,K,B,W,E,T,Q,K
+H,S,R,U,P,S,C,P,D,N,S,P,J,S,P,N
+A,Y,H,T,X,G,R,C,Z,D,U,N,O,K,E,V
+B,X,T,D,R,O,N,B,L,Y,I,T,N,I,X,D
+G,I,L,L,I,A,M,G,Z,S,N,E,E,I,Y,D
+O,A,U,O,Y,Q,D,F,F,M,A,Q,S,S,T,W
+T,X,U,A,X,A,B,O,N,P,G,M,M,W,E,V
+S,Z,A,W,L,M,R,B,W,O,P,W,X,N,W,M
+E,L,D,I,T,J,V,Z,U,O,W,L,Z,P,E,P
+T,I,A,C,R,W,F,Y,U,S,W,B,J,P,W,G
