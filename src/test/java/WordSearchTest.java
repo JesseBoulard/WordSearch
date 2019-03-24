@@ -44,4 +44,18 @@ public class WordSearchTest {
         assertEquals(expectedFirstLine, actualFirstLine);
         assertEquals(expectedLastLine, actualLastLine);
     }
+
+    @Test
+    public void parseLinesIntoStringArrayTest() {
+        String[][] stringArray = starTrekWordSearch.parseLinesIntoStringArray();
+
+        String expectedFirstString = "U";
+        String actualFirstString = stringArray[0][0];
+
+        String expectedLastString = "B";
+        String actualLastString = stringArray[stringArray.length - 1][stringArray[0].length -1];
+
+        assertEquals(expectedFirstString, actualFirstString);
+        assertEquals(expectedLastString, actualLastString);
+    }
 }

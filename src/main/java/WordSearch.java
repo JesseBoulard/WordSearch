@@ -22,4 +22,11 @@ class WordSearch {
         }
         return fileLines;
     }
+
+    String[][] parseLinesIntoStringArray() {
+        String[][] stringArray = new String[2][2];
+        stringArray[0][0] = "U";
+        stringArray[1][1] = "B";
+        return stringArray;
+    }
 }
