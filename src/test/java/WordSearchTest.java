@@ -46,13 +46,27 @@ public class WordSearchTest {
     }
 
     @Test
-    public void parseLinesIntoStringArrayTest() {
+    public void parseLinesIntoStringArrayTest() throws IOException {
         String[][] stringArray = starTrekWordSearch.parseLinesIntoStringArray();
 
         String expectedFirstString = "U";
         String actualFirstString = stringArray[0][0];
 
         String expectedLastString = "B";
+        String actualLastString = stringArray[stringArray.length - 1][stringArray[0].length -1];
+
+        assertEquals(expectedFirstString, actualFirstString);
+        assertEquals(expectedLastString, actualLastString);
+    }
+
+    @Test
+    public void parseLinesIntoStringArrayDifferentFileTest() throws IOException {
+        String[][] stringArray = pythonsWordSearch.parseLinesIntoStringArray();
+
+        String expectedFirstString = "V";
+        String actualFirstString = stringArray[0][0];
+
+        String expectedLastString = "G";
         String actualLastString = stringArray[stringArray.length - 1][stringArray[0].length -1];
 
         assertEquals(expectedFirstString, actualFirstString);

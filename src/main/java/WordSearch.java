@@ -23,10 +23,19 @@ class WordSearch {
         return fileLines;
     }
 
-    String[][] parseLinesIntoStringArray() {
-        String[][] stringArray = new String[2][2];
-        stringArray[0][0] = "U";
-        stringArray[1][1] = "B";
+    String[][] parseLinesIntoStringArray() throws IOException {
+        List<String> linesFromFile = getLinesFromFile();
+        linesFromFile.remove(0);
+
+        String[][] stringArray = new String[linesFromFile.size()][linesFromFile.size()];
+        for (int x = 0; x < linesFromFile.size(); x++) {
+            String[] strings = getStringsFromLine(linesFromFile.get(x));
+            System.arraycopy(strings, 0, stringArray[x], 0, strings.length);
+        }
         return stringArray;
+    }
+
+    private String[] getStringsFromLine(String line) {
+        return line.split(",");
     }
 }
