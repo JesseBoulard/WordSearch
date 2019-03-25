@@ -485,4 +485,12 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getWordCoordinatesForDirectionTestNorthWest() {
+        String expected = "GENMQ: (15,15),(14,14),(13,13),(12,12),(11,11)";
+        String actual = pythonsWordSearch.getWordCoordinatesForDirection("GENMQ", WordSearch.NORTHWEST);
+
+        assertEquals(expected, actual);
+    }
 }
