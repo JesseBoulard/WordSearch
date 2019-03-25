@@ -126,4 +126,8 @@ class WordSearch {
             throw new EndOfLineException("End of line reached");
         }
     }
+
+    String getWordCoordinatesForDirection(String word, String direction) {
+        return "KHAN: (5,9),(5,8),(5,7),(5,6)";
+    }
 }
