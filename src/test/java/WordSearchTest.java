@@ -197,4 +197,17 @@ public class WordSearchTest {
         assertEquals(expectedXCoordinate, actualXCoordinate);
         assertEquals(expectedYCoordinate, actualYCoordinate);
     }
+
+    @Test
+    public void getNorthGridItemDifferentCoordinatesTest() {
+        int expectedXCoordinate = 5;
+        int expectedYCoordinate = 4;
+
+        GridItem gridItem = pythonsWordSearch.getNorthGridItem(pythonsWordSearch.getGridItemForCoordinates(5, 5));
+        int actualXCoordinate = gridItem.getXCoordinate();
+        int actualYCoordinate = gridItem.getYCoordinate();
+
+        assertEquals(expectedXCoordinate, actualXCoordinate);
+        assertEquals(expectedYCoordinate, actualYCoordinate);
+    }
 }

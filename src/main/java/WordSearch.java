@@ -64,6 +64,6 @@ class WordSearch {
     }
 
     GridItem getNorthGridItem(GridItem gridItem) {
-        return new GridItem("Z", 0, 14);
+        return getGridItemForCoordinates(gridItem.getXCoordinate(), gridItem.getYCoordinate() - 1);
     }
 }
