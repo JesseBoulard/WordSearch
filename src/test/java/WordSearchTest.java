@@ -322,4 +322,16 @@ public class WordSearchTest {
 
         assertTrue(hasError);
     }
+
+    @Test
+    public void getOtherNorthWestGridItemEdgeCaseTest() {
+        boolean hasError = false;
+        try {
+            pythonsWordSearch.getNorthWestGridItem(pythonsWordSearch.getGridItemForCoordinates(1, 0));
+        } catch (EndOfLineException e) {
+            hasError = true;
+        }
+
+        assertTrue(hasError);
+    }
 }
