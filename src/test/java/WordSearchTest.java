@@ -116,4 +116,17 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getGridItemForCoordinatesTestMoreEdgeCases() {
+        String expected = "E";
+        String actual = starTrekWordSearch.getGridItemForCoordinates(14, 0).getLetter();
+
+        assertEquals(expected, actual);
+
+        expected = "K";
+        actual = starTrekWordSearch.getGridItemForCoordinates(0, 14).getLetter();
+
+        assertEquals(expected, actual);
+    }
 }
