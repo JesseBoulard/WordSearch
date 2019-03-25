@@ -222,4 +222,29 @@ public class WordSearchTest {
 
         assertTrue(hasError);
     }
+
+    @Test
+    public void getSouthGridItemTest() throws EndOfLineException {
+        int expectedXCoordinate = 4;
+        int expectedYCoordinate = 5;
+
+        GridItem gridItem = pythonsWordSearch.getSouthGridItem(pythonsWordSearch.getGridItemForCoordinates(4, 4));
+        int actualXCoordinate = gridItem.getXCoordinate();
+        int actualYCoordinate = gridItem.getYCoordinate();
+
+        assertEquals(expectedXCoordinate, actualXCoordinate);
+        assertEquals(expectedYCoordinate, actualYCoordinate);
+    }
+
+    @Test
+    public void getSouthGridItemEdgeCaseTest() {
+        boolean hasError = false;
+        try {
+            pythonsWordSearch.getSouthGridItem(pythonsWordSearch.getGridItemForCoordinates(5, 15));
+        } catch (EndOfLineException e) {
+            hasError = true;
+        }
+
+        assertTrue(hasError);
+    }
 }

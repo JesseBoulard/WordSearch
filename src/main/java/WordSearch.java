@@ -70,4 +70,12 @@ class WordSearch {
             throw new EndOfLineException("End of line reached");
         }
     }
+
+    GridItem getSouthGridItem(GridItem gridItem) throws EndOfLineException {
+        if (gridItem.getYCoordinate() + 1 <= stringArray.length - 1) {
+            return getGridItemForCoordinates(gridItem.getXCoordinate(), gridItem.getYCoordinate() + 1);
+        } else {
+            throw new EndOfLineException("End of line reached");
+        }
+    }
 }
