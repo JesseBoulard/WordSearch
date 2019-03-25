@@ -449,7 +449,7 @@ public class WordSearchTest {
     @Test
     public void getWordCoordinatesForDirectionTestNorth() {
         String expected = "KHAN: (5,9),(5,8),(5,7),(5,6)";
-        String actual = starTrekWordSearch.getWordCoordinatesForDirection("KHAN", "north");
+        String actual = starTrekWordSearch.getWordCoordinatesForDirection("KHAN", WordSearch.NORTH);
 
         assertEquals(expected, actual);
     }
@@ -457,7 +457,15 @@ public class WordSearchTest {
     @Test
     public void getWordCoordinatesForDirectionTestNorthRefactor() {
         String expected = "TEST: (0,15),(0,14),(0,13),(0,12)";
-        String actual = pythonsWordSearch.getWordCoordinatesForDirection("TEST", "north");
+        String actual = pythonsWordSearch.getWordCoordinatesForDirection("TEST", WordSearch.NORTH);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getWordCoordinatesForDirectionTestWest() {
+        String expected = "RCAIT: (4,15),(3,15),(2,15),(1,15),(0,15)";
+        String actual = pythonsWordSearch.getWordCoordinatesForDirection("RCAIT", WordSearch.WEST);
 
         assertEquals(expected, actual);
     }

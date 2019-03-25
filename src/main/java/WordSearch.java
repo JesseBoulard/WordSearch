@@ -12,14 +12,14 @@ class WordSearch {
     private String[][] stringArray;
     private List<GridItem> gridItems;
 
-    private static final String NORTH = "north";
-    private static final String SOUTH = "south";
-    private static final String EAST = "east";
-    private static final String WEST = "west";
-    private static final String NORTHWEST = "northwest";
-    private static final String NORTHEAST = "northeast";
-    private static final String SOUTHWEST = "southwest";
-    private static final String SOUTHEAST = "southeast";
+    static final String NORTH = "north";
+    static final String SOUTH = "south";
+    static final String EAST = "east";
+    static final String WEST = "west";
+    static final String NORTHWEST = "northwest";
+    static final String NORTHEAST = "northeast";
+    static final String SOUTHWEST = "southwest";
+    static final String SOUTHEAST = "southeast";
 
     WordSearch(String filePath) throws IOException {
         this.filePath = filePath;
@@ -146,9 +146,10 @@ class WordSearch {
                 for (int i = 0; i < splitWord.length; i++)  {
                     if (gridItem.getLetter().equals(splitWord[i])) {
                         output.append("(").append(gridItem.getXCoordinate()).append(",").append(gridItem.getYCoordinate()).append(")").append(getSeparator(i, splitWord.length - 1));
-                        gridItem = getGridItemForDirection(direction, gridItem);
                         if (i + 1 == splitWord.length) {
                             return output.toString();
+                        } else {
+                            gridItem = getGridItemForDirection(direction, gridItem);
                         }
                     } else {
                         output = new StringBuilder(word + ": ");
