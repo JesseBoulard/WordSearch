@@ -477,4 +477,12 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getWordCoordinatesForDirectionTestEast() {
+        String expected = "SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)";
+        String actual = starTrekWordSearch.getWordCoordinatesForDirection("SCOTTY", WordSearch.EAST);
+
+        assertEquals(expected, actual);
+    }
 }
