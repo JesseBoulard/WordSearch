@@ -487,7 +487,7 @@ public class WordSearchTest {
     }
 
     @Test
-    public void getWordCoordinatesForDirectionTestNorthWest() {
+    public void getWordCoordinatesForDirectionTestNorthwest() {
         String expected = "GENMQ: (15,15),(14,14),(13,13),(12,12),(11,11)";
         String actual = pythonsWordSearch.getWordCoordinatesForDirection("GENMQ", WordSearch.NORTHWEST);
 
@@ -495,9 +495,17 @@ public class WordSearchTest {
     }
 
     @Test
-    public void getWordCoordinatesForDirectionTestNorthEast() {
+    public void getWordCoordinatesForDirectionTestNortheast() {
         String expected = "TLAAY: (0,15),(1,14),(2,13),(3,12),(4,11)";
         String actual = pythonsWordSearch.getWordCoordinatesForDirection("TLAAY", WordSearch.NORTHEAST);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getWordCoordinatesForDirectionTestSouthwest() {
+        String expected = "WCYTN: (15,0),(14,1),(13,2),(12,3),(11,4)";
+        String actual = pythonsWordSearch.getWordCoordinatesForDirection("WCYTN", WordSearch.SOUTHWEST);
 
         assertEquals(expected, actual);
     }
