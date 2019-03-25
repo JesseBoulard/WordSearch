@@ -94,4 +94,12 @@ class WordSearch {
             throw new EndOfLineException("End of line reached");
         }
     }
+
+    GridItem getNorthWestGridItem(GridItem gridItem) throws EndOfLineException {
+        if (gridItem.getXCoordinate() - 1 >= 0 && gridItem.getYCoordinate() - 1 >= 0) {
+            return getGridItemForCoordinates(gridItem.getXCoordinate() - 1, gridItem.getYCoordinate() - 1);
+        } else {
+            throw new EndOfLineException("End of line reached");
+        }
+    }
 }

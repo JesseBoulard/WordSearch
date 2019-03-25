@@ -298,4 +298,28 @@ public class WordSearchTest {
         assertTrue(hasError);
     }
 
+    @Test
+    public void getNorthWestGridItemTest() throws EndOfLineException {
+        int expectedXCoordinate = 4;
+        int expectedYCoordinate = 4;
+
+        GridItem gridItem = pythonsWordSearch.getNorthWestGridItem(pythonsWordSearch.getGridItemForCoordinates(5, 5));
+        int actualXCoordinate = gridItem.getXCoordinate();
+        int actualYCoordinate = gridItem.getYCoordinate();
+
+        assertEquals(expectedXCoordinate, actualXCoordinate);
+        assertEquals(expectedYCoordinate, actualYCoordinate);
+    }
+
+    @Test
+    public void getNorthWestGridItemEdgeCaseTest() {
+        boolean hasError = false;
+        try {
+            pythonsWordSearch.getNorthWestGridItem(pythonsWordSearch.getGridItemForCoordinates(0, 5));
+        } catch (EndOfLineException e) {
+            hasError = true;
+        }
+
+        assertTrue(hasError);
+    }
 }
