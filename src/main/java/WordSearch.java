@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class WordSearch {
 
@@ -59,8 +60,6 @@ class WordSearch {
     }
 
     List<GridItem> getGridItemsForLetter(String letter) {
-        List<GridItem> gridItems = new ArrayList<>();
-        gridItems.add(new GridItem("V", 0, 0));
-        return gridItems;
+        return gridItems.stream().filter(gridItem -> gridItem.getLetter().equals(letter)).collect(Collectors.toList());
     }
 }
