@@ -63,7 +63,11 @@ class WordSearch {
         return gridItems.stream().filter(gridItem -> gridItem.getLetter().equals(letter)).collect(Collectors.toList());
     }
 
-    GridItem getNorthGridItem(GridItem gridItem) {
-        return getGridItemForCoordinates(gridItem.getXCoordinate(), gridItem.getYCoordinate() - 1);
+    GridItem getNorthGridItem(GridItem gridItem) throws EndOfLineException {
+        if (gridItem.getYCoordinate() - 1 >= 0) {
+            return getGridItemForCoordinates(gridItem.getXCoordinate(), gridItem.getYCoordinate() - 1);
+        } else {
+            throw new EndOfLineException("End of line reached");
+        }
     }
 }

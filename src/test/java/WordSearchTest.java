@@ -186,7 +186,7 @@ public class WordSearchTest {
     }
 
     @Test
-    public void getNorthGridItemTest() {
+    public void getNorthGridItemTest() throws EndOfLineException {
         int expectedXCoordinate = 0;
         int expectedYCoordinate = 14;
 
@@ -199,7 +199,7 @@ public class WordSearchTest {
     }
 
     @Test
-    public void getNorthGridItemDifferentCoordinatesTest() {
+    public void getNorthGridItemDifferentCoordinatesTest() throws EndOfLineException {
         int expectedXCoordinate = 5;
         int expectedYCoordinate = 4;
 
@@ -209,5 +209,17 @@ public class WordSearchTest {
 
         assertEquals(expectedXCoordinate, actualXCoordinate);
         assertEquals(expectedYCoordinate, actualYCoordinate);
+    }
+
+    @Test
+    public void getNorthGridItemEdgeCaseTest() {
+        boolean hasError = false;
+        try {
+            pythonsWordSearch.getNorthGridItem(pythonsWordSearch.getGridItemForCoordinates(5, 0));
+        } catch (EndOfLineException e) {
+            hasError = true;
+        }
+
+        assertTrue(hasError);
     }
 }
