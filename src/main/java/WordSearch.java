@@ -191,8 +191,9 @@ class WordSearch {
         }
     }
 
-    String[] getWords() {
-        String[] words = {"BONES", "KHAN", "KIRK", "SCOTTY", "SPOCK", "SULU", "UHURA"};
-        return words;
+    String[] getWords() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(filePath)));
+        String line = bufferedReader.readLine();
+        return line.split(",");
     }
 }

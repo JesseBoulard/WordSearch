@@ -519,9 +519,17 @@ public class WordSearchTest {
     }
 
     @Test
-    void getWordsTest() {
+    public void getWordsTest() throws IOException {
         String[] expected = {"BONES", "KHAN", "KIRK", "SCOTTY", "SPOCK", "SULU", "UHURA"};
         String[] actual = starTrekWordSearch.getWords();
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void getWordsTestOtherFile() throws IOException {
+        String[] expected = {"CLEESE", "PALIN", "IDLE", "JONES", "GILLIAM"};
+        String[] actual = pythonsWordSearch.getWords();
 
         assertArrayEquals(expected, actual);
     }
