@@ -158,4 +158,17 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getGridItemsForLetterTest() {
+        List<GridItem> gridItems = pythonsWordSearch.getGridItemsForLetter("V");
+
+        int expectedXCoordinate = 0;
+        int expectedYCoordinate = 0;
+        int actualXCoordinate = gridItems.get(0).getXCoordinate();
+        int actualYCoordinate = gridItems.get(0).getYCoordinate();
+
+        assertEquals(expectedXCoordinate, actualXCoordinate);
+        assertEquals(expectedYCoordinate, actualYCoordinate);
+    }
 }

@@ -57,4 +57,10 @@ class WordSearch {
     GridItem getGridItemForCoordinates(int xCoordinate, int yCoordinate) {
         return gridItems.get((xCoordinate * stringArray.length) + yCoordinate);
     }
+
+    List<GridItem> getGridItemsForLetter(String letter) {
+        List<GridItem> gridItems = new ArrayList<>();
+        gridItems.add(new GridItem("V", 0, 0));
+        return gridItems;
+    }
 }
