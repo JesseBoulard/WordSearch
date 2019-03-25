@@ -129,4 +129,33 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getGridItemForCoordinatesTestNewFile() {
+        String expected = "G";
+        String actual = pythonsWordSearch.getGridItemForCoordinates(15, 15).getLetter();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getGridItemForCoordinatesTestOtherCoordinatesNewFile() {
+        String expected = "V";
+        String actual = pythonsWordSearch.getGridItemForCoordinates(0, 0).getLetter();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getGridItemForCoordinatesTestMoreEdgeCasesNewFile() {
+        String expected = "W";
+        String actual = pythonsWordSearch.getGridItemForCoordinates(15, 0).getLetter();
+
+        assertEquals(expected, actual);
+
+        expected = "T";
+        actual = pythonsWordSearch.getGridItemForCoordinates(0, 15).getLetter();
+
+        assertEquals(expected, actual);
+    }
 }
