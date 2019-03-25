@@ -62,4 +62,8 @@ class WordSearch {
     List<GridItem> getGridItemsForLetter(String letter) {
         return gridItems.stream().filter(gridItem -> gridItem.getLetter().equals(letter)).collect(Collectors.toList());
     }
+
+    GridItem getNorthGridItem(GridItem gridItem) {
+        return new GridItem("Z", 0, 14);
+    }
 }

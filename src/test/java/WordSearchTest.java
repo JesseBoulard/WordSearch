@@ -172,7 +172,6 @@ public class WordSearchTest {
         assertEquals(expectedYCoordinate, actualYCoordinate);
     }
 
-
     @Test
     public void getGridItemsForLetterTestNextGridItem() {
         List<GridItem> gridItems = pythonsWordSearch.getGridItemsForLetter("V");
@@ -181,6 +180,19 @@ public class WordSearchTest {
         int expectedYCoordinate = 4;
         int actualXCoordinate = gridItems.get(1).getXCoordinate();
         int actualYCoordinate = gridItems.get(1).getYCoordinate();
+
+        assertEquals(expectedXCoordinate, actualXCoordinate);
+        assertEquals(expectedYCoordinate, actualYCoordinate);
+    }
+
+    @Test
+    public void getNorthGridItemTest() {
+        int expectedXCoordinate = 0;
+        int expectedYCoordinate = 14;
+
+        GridItem gridItem = pythonsWordSearch.getNorthGridItem(pythonsWordSearch.getGridItemForCoordinates(0, 15));
+        int actualXCoordinate = gridItem.getXCoordinate();
+        int actualYCoordinate = gridItem.getYCoordinate();
 
         assertEquals(expectedXCoordinate, actualXCoordinate);
         assertEquals(expectedYCoordinate, actualYCoordinate);
