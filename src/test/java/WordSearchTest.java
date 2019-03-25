@@ -536,14 +536,26 @@ public class WordSearchTest {
 
     @Test
     public void searchWordsTest() {
-        String expected = "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)\n" +
-                        "KHAN: (5,9),(5,8),(5,7),(5,6)\n" +
-                        "KIRK: (4,7),(3,7),(2,7),(1,7)\n" +
-                        "SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)\n" +
-                        "SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)\n" +
-                        "SULU: (3,3),(2,2),(1,1),(0,0)\n" +
+        String expected = "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)" + System.lineSeparator() +
+                        "KHAN: (5,9),(5,8),(5,7),(5,6)" + System.lineSeparator() +
+                        "KIRK: (4,7),(3,7),(2,7),(1,7)" + System.lineSeparator() +
+                        "SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)" + System.lineSeparator() +
+                        "SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)" + System.lineSeparator() +
+                        "SULU: (3,3),(2,2),(1,1),(0,0)" + System.lineSeparator() +
                         "UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)";
         String actual = starTrekWordSearch.searchWords();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void searchWordsTestDifferentFile() {
+        String expected = "CLEESE: (9,3),(10,4),(11,5),(12,6),(13,7),(14,8)" + System.lineSeparator() +
+        "PALIN: (4,0),(3,1),(2,2),(1,3),(0,4)" + System.lineSeparator() +
+        "IDLE: (3,14),(2,14),(1,14),(0,14)" + System.lineSeparator() +
+        "JONES: (12,7),(12,8),(12,9),(12,10),(12,11)" + System.lineSeparator() +
+        "GILLIAM: (0,10),(1,10),(2,10),(3,10),(4,10),(5,10),(6,10)";
+        String actual = pythonsWordSearch.searchWords();
 
         assertEquals(expected, actual);
     }

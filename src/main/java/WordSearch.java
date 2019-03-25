@@ -8,6 +8,7 @@ class WordSearch {
     private String filePath;
     private String[][] stringArray;
     private List<GridItem> gridItems;
+    private String[] words;
 
     static final String NORTH = "north";
     static final String SOUTH = "south";
@@ -17,11 +18,13 @@ class WordSearch {
     static final String NORTHEAST = "northeast";
     static final String SOUTHWEST = "southwest";
     static final String SOUTHEAST = "southeast";
+    private static final String[] DIRECTIONS = {NORTH, SOUTH, EAST, WEST, NORTHWEST, NORTHEAST, SOUTHWEST, SOUTHEAST};
 
     WordSearch(String filePath) throws IOException {
         this.filePath = filePath;
         this.stringArray = parseLinesIntoStringArray();
         this.gridItems = parseStringArrayIntoGridItems();
+        this.words = getWords();
     }
 
     List<String> getLinesFromFile() throws IOException {
@@ -198,12 +201,18 @@ class WordSearch {
     }
 
     String searchWords() {
-        return "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)\n" +
-                "KHAN: (5,9),(5,8),(5,7),(5,6)\n" +
-                "KIRK: (4,7),(3,7),(2,7),(1,7)\n" +
-                "SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)\n" +
-                "SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)\n" +
-                "SULU: (3,3),(2,2),(1,1),(0,0)\n" +
-                "UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)";
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < words.length; i++) {
+            for (String direction : DIRECTIONS) {
+                String line = getWordCoordinatesForDirection(words[i], direction);
+                if (!line.equals(words[i] + ": ")) {
+                    output.append(line);
+                }
+            }
+            if (i + 1 < words.length) {
+                output.append(System.lineSeparator());
+            }
+        }
+        return output.toString();
     }
 }
