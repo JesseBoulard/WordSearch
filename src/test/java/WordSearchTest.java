@@ -453,4 +453,12 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getWordCoordinatesForDirectionTestNorthRefactor() {
+        String expected = "TEST: (0,15),(0,14),(0,13),(0,12)";
+        String actual = pythonsWordSearch.getWordCoordinatesForDirection("TEST", "north");
+
+        assertEquals(expected, actual);
+    }
 }

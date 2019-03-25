@@ -12,6 +12,15 @@ class WordSearch {
     private String[][] stringArray;
     private List<GridItem> gridItems;
 
+    private static final String NORTH = "north";
+    private static final String SOUTH = "south";
+    private static final String EAST = "east";
+    private static final String WEST = "west";
+    private static final String NORTHWEST = "northwest";
+    private static final String NORTHEAST = "northeast";
+    private static final String SOUTHWEST = "southwest";
+    private static final String SOUTHEAST = "southeast";
+
     WordSearch(String filePath) throws IOException {
         this.filePath = filePath;
         this.stringArray = parseLinesIntoStringArray();
@@ -128,6 +137,59 @@ class WordSearch {
     }
 
     String getWordCoordinatesForDirection(String word, String direction) {
-        return "KHAN: (5,9),(5,8),(5,7),(5,6)";
+        String[] splitWord = word.split("");
+        List<GridItem> potentialFirstLetterGridItems = getGridItemsForLetter(splitWord[0]);
+
+        StringBuilder output = new StringBuilder(word + ": ");
+        for (GridItem gridItem: potentialFirstLetterGridItems) {
+            try {
+                for (int i = 0; i < splitWord.length; i++)  {
+                    if (gridItem.getLetter().equals(splitWord[i])) {
+                        output.append("(").append(gridItem.getXCoordinate()).append(",").append(gridItem.getYCoordinate()).append(")").append(getSeparator(i, splitWord.length - 1));
+                        gridItem = getGridItemForDirection(direction, gridItem);
+                        if (i + 1 == splitWord.length) {
+                            return output.toString();
+                        }
+                    } else {
+                        output = new StringBuilder(word + ": ");
+                        break;
+                    }
+                }
+            } catch (EndOfLineException e) {
+                output = new StringBuilder(word + ": ");
+            }
+        }
+        return output.toString();
+    }
+
+    private String getSeparator(int index, int lastIndex) {
+        String separator = ",";
+        if (index == lastIndex) {
+            separator = "";
+        }
+        return separator;
+    }
+
+    private GridItem getGridItemForDirection(String direction, GridItem gridItem) throws EndOfLineException {
+        switch(direction) {
+            case NORTH:
+                return getNorthGridItem(gridItem);
+            case SOUTH:
+                return getSouthGridItem(gridItem);
+            case EAST:
+                return getEastGridItem(gridItem);
+            case WEST:
+                return getWestGridItem(gridItem);
+            case NORTHWEST:
+                return getNorthWestGridItem(gridItem);
+            case NORTHEAST:
+                return getNorthEastGridItem(gridItem);
+            case SOUTHWEST:
+                return getSouthWestGridItem(gridItem);
+            case SOUTHEAST:
+                return getSouthEastGridItem(gridItem);
+            default:
+                return gridItem;
+        }
     }
 }
