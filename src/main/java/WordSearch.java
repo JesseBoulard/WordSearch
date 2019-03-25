@@ -9,10 +9,12 @@ class WordSearch {
 
     private String filePath;
     private String[][] stringArray;
+    private List<GridItem> gridItems;
 
     WordSearch(String filePath) throws IOException {
         this.filePath = filePath;
         this.stringArray = parseLinesIntoStringArray();
+        this.gridItems = parseStringArrayIntoGridItems();
     }
 
     List<String> getLinesFromFile() throws IOException {
@@ -53,6 +55,6 @@ class WordSearch {
     }
 
     GridItem getGridItemForCoordinates(int xCoordinate, int yCoordinate) {
-        return new GridItem("B", 14, 14);
+        return gridItems.get((xCoordinate * stringArray.length) + yCoordinate);
     }
 }
