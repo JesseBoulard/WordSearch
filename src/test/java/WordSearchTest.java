@@ -517,4 +517,12 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void getWordsTest() {
+        String[] expected = {"BONES", "KHAN", "KIRK", "SCOTTY", "SPOCK", "SULU", "UHURA"};
+        String[] actual = starTrekWordSearch.getWords();
+
+        assertArrayEquals(expected, actual);
+    }
 }

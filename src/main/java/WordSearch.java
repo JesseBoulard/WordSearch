@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -192,5 +189,10 @@ class WordSearch {
             default:
                 return gridItem;
         }
+    }
+
+    String[] getWords() {
+        String[] words = {"BONES", "KHAN", "KIRK", "SCOTTY", "SPOCK", "SULU", "UHURA"};
+        return words;
     }
 }
