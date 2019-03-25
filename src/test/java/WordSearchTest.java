@@ -408,4 +408,41 @@ public class WordSearchTest {
 
         assertTrue(hasError);
     }
+
+    @Test
+    public void getSouthEastGridItemTest() throws EndOfLineException {
+        int expectedXCoordinate = 6;
+        int expectedYCoordinate = 6;
+
+        GridItem gridItem = pythonsWordSearch.getSouthEastGridItem(pythonsWordSearch.getGridItemForCoordinates(5, 5));
+        int actualXCoordinate = gridItem.getXCoordinate();
+        int actualYCoordinate = gridItem.getYCoordinate();
+
+        assertEquals(expectedXCoordinate, actualXCoordinate);
+        assertEquals(expectedYCoordinate, actualYCoordinate);
+    }
+
+    @Test
+    public void getSouthEastGridItemEdgeCaseTest() {
+        boolean hasError = false;
+        try {
+            pythonsWordSearch.getSouthEastGridItem(pythonsWordSearch.getGridItemForCoordinates(15, 5));
+        } catch (EndOfLineException e) {
+            hasError = true;
+        }
+
+        assertTrue(hasError);
+    }
+
+    @Test
+    public void getOtherSouthEastGridItemEdgeCaseTest() {
+        boolean hasError = false;
+        try {
+            pythonsWordSearch.getSouthEastGridItem(pythonsWordSearch.getGridItemForCoordinates(5, 15));
+        } catch (EndOfLineException e) {
+            hasError = true;
+        }
+
+        assertTrue(hasError);
+    }
 }
