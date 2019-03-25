@@ -509,4 +509,12 @@ public class WordSearchTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void getWordCoordinatesForDirectionTestSoutheast() {
+        String expected = "VALEV: (0,0),(1,1),(2,2),(3,3),(4,4)";
+        String actual = pythonsWordSearch.getWordCoordinatesForDirection("VALEV", WordSearch.SOUTHEAST);
+
+        assertEquals(expected, actual);
+    }
 }
