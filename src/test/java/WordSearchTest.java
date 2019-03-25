@@ -53,7 +53,7 @@ public class WordSearchTest {
         String actualFirstString = stringArray[0][0];
 
         String expectedLastString = "B";
-        String actualLastString = stringArray[stringArray.length - 1][stringArray[0].length -1];
+        String actualLastString = stringArray[stringArray.length - 1][stringArray[0].length - 1];
 
         assertEquals(expectedFirstString, actualFirstString);
         assertEquals(expectedLastString, actualLastString);
@@ -67,7 +67,7 @@ public class WordSearchTest {
         String actualFirstString = stringArray[0][0];
 
         String expectedLastString = "G";
-        String actualLastString = stringArray[stringArray.length - 1][stringArray[0].length -1];
+        String actualLastString = stringArray[stringArray.length - 1][stringArray[0].length - 1];
 
         assertEquals(expectedFirstString, actualFirstString);
         assertEquals(expectedLastString, actualLastString);
@@ -532,5 +532,19 @@ public class WordSearchTest {
         String[] actual = pythonsWordSearch.getWords();
 
         assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void searchWordsTest() {
+        String expected = "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)\n" +
+                        "KHAN: (5,9),(5,8),(5,7),(5,6)\n" +
+                        "KIRK: (4,7),(3,7),(2,7),(1,7)\n" +
+                        "SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)\n" +
+                        "SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)\n" +
+                        "SULU: (3,3),(2,2),(1,1),(0,0)\n" +
+                        "UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)";
+        String actual = starTrekWordSearch.searchWords();
+
+        assertEquals(expected, actual);
     }
 }
